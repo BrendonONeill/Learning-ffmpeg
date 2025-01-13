@@ -1,7 +1,7 @@
 const { spawn } = require('node:child_process');
 
 let takeAtSecond = `${1}`;
-let file = 'fw1.mp4';
+let file = 'data.mp4';
 let output = `output1.png`;
 const numberOfFrames = '1';
 

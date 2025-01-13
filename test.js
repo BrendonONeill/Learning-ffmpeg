@@ -1,6 +1,6 @@
 const ffmpeg = require('fluent-ffmpeg');
 
-function generate(start,loop)
+function generatingTimestamps(start,loop)
 {
     let arr = []
     let end = start + loop
@@ -12,12 +12,12 @@ function generate(start,loop)
     return arr
 }
 
-function testing(arr)
+function imageGeneration(arr)
 {
-    return arr.map( async (test, index) => {
+    return arr.map( async (data, index) => {
         try{
-            console.log(test,index)
-            ffmpeg({source: 'C:/Users/bpjon/OneDrive/Desktop/test_upload/test.mp4'})
+            console.log(data,index)
+            ffmpeg({source: 'data.mp4'})
             .on('filenames',(filenames) => {
                 console.log('creating ' + filenames + Date.now().toLocaleString())
             })
@@ -29,7 +29,7 @@ function testing(arr)
             })
             .takeScreenshots({
                 filename:'example.png',
-                timemarks:test,
+                timemarks:data,
                 filename: '%f'
             }, `images/frames-${index}`)
         }
@@ -41,8 +41,8 @@ function testing(arr)
 
 async function main()
 {
-    let arr  = await generate(20,10)
-    let uploadPromises = await testing(arr)
+    let arr  = await generatingTimestamps(20,10)
+    let uploadPromises = await imageGeneration(arr)
     await Promise.all(uploadPromises);
 }
 
