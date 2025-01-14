@@ -1,4 +1,12 @@
-const ffmpeg = require('fluent-ffmpeg');
+import ffmpeg from 'fluent-ffmpeg';
+import "child_process";
+
+
+export function imageGen(req, res)
+{
+    main()
+}
+
 
 function generatingTimestamps(start,loop)
 {
@@ -34,7 +42,7 @@ function imageGeneration(arr)
             }, `images/frames-${index}`)
         }
         catch(error){
-    
+            console.log(error)
         }
     })    
 }
@@ -43,9 +51,5 @@ async function main()
 {
     let arr  = await generatingTimestamps(20,10)
     let uploadPromises = await imageGeneration(arr)
-    await Promise.all(uploadPromises);
+    let test = await Promise.all(uploadPromises).then(test => console.log(test));
 }
-
-main()
-
-
