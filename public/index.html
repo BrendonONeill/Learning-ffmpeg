@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Video slicer</h1>
+    <video src="" class="video-style" id="video" controls></video>
+    <form action="">
+        <label for=""> Video file
+            <input type="file" id="video-file" name="">
+            <input type="range" id="video-slider" name="">
+        </label>
+    </form>
+    <ul>
+        <li>User selects file. </li>
+        <li>Ether using fs/input I find file location to use to generate images. </li>
+        <li>Let user pick start and end time stamps. </li>
+        <li>Generate amount of images from video it will be based on how many within a second. </li>
+        <li>Main goal is to have it ready for the wedding. </li>
+    </ul>
+    <canvas class="canvas-video"></canvas>
+
+
+    <script src="main.js" async defer></script>
+</body>
+
+</html>

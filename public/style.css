@@ -1,0 +1,18 @@
+:root {
+    --videox3-w: 640px;
+    --videox3-h: 360px;
+    --video-w: 1920px;
+    --video-h: 1080px;
+}
+
+.video-style {
+    width: var(--videox3-w);
+    height: var(--videox3-h);
+    background-color: lime;
+}
+
+.video-large {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
